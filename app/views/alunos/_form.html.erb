@@ -1,4 +1,4 @@
-<%= form_for(aluno) do |f| %>
+<%= form_for(aluno, validate: true) do |f| %>
   <% if aluno.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(aluno.errors.count, "error") %> prohibited this aluno from being saved:</h2>

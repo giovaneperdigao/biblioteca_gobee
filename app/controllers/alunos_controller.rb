@@ -4,12 +4,23 @@ class AlunosController < ApplicationController
   # GET /alunos
   # GET /alunos.json
   def index
-    @alunos = Aluno.all
+    @alunos =
+      if params[:campo_busca].nil?
+        Aluno.all
+      else
+        Aluno.where("nome like ?","%#{params[:campo_busca]}%")
+      end
   end
 
   # GET /alunos/1
   # GET /alunos/1.json
   def show
+    @emprestimo =
+      if @aluno.livro
+        @aluno.emprestimos.abertos.first
+      else
+        nil
+      end
   end
 
   # GET /alunos/new

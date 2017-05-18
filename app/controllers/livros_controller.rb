@@ -7,6 +7,15 @@ class LivrosController < ApplicationController
     @livros = Livro.all
   end
 
+  def index
+    @livros =
+      if params[:campo_busca].nil?
+        Livro.all
+      else
+        Livro.where("nome like ?","%#{params[:campo_busca]}%")
+      end
+  end
+
   # GET /livros/1
   # GET /livros/1.json
   def show

@@ -12,6 +12,3 @@
 
 <%= link_to 'Editar', edit_aluno_path(@aluno) %> |
 <%= link_to 'Voltar', alunos_path %>
-<% if @aluno.livro %>
-    <%= link_to 'Devolver Livro', edit_emprestimo_path(@emprestimo) %>
-<% end %>
