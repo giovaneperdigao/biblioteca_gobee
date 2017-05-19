@@ -1,4 +1,6 @@
 class Aluno < ApplicationRecord
+  acts_as_paranoid
+  
   has_one :livro
   has_many :emprestimos
 

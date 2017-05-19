@@ -1,15 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Emprestimos</h1>
-
-<%= helper_busca(emprestimos_url, method: "get")%>
+<h1>Empréstimos</h1>
 
 <table width="100%">
   <thead>
     <tr>
       <th width="50%">Aluno</th>
       <th width="40%">Livro</th>
-      <th width="5%">Data de Emprestimo</th>
+      <th width="5%">Data de Empréstimo</th>
       <th width="5%">Data de Devolução</th>
     </tr>
   </thead>
@@ -17,8 +15,8 @@
   <tbody>
     <% @emprestimos.each do |emprestimo| %>
       <tr>
-        <td><%= emprestimo.aluno.nome %></td>
-        <td><%= emprestimo.livro.nome %></td>
+        <td><%= emprestimo.aluno_nome %></td>
+        <td><%= emprestimo.livro_nome %></td>
         <td><%= emprestimo.data_emprestimo %></td>
         <td><%= emprestimo.data_devolucao.nil? ? link_to('Devolver Livro', edit_emprestimo_path(emprestimo)) : emprestimo.data_devolucao %></td>
       </tr>

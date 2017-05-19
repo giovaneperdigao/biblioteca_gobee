@@ -37,6 +37,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'client_side_validations'
 
+gem 'acts_as_paranoid', '~> 0.5.0'
+
+gem 'rails-i18n', '~> 5.0.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

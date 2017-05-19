@@ -15,7 +15,7 @@ class EmprestimosController < ApplicationController
 
     respond_to do |format|
       if @emprestimo.save
-        format.html { redirect_to emprestimos_url, notice: 'Emprestimo criado com sucesso.' }
+        format.html { redirect_to emprestimos_url, notice: 'Empréstimo criado com sucesso.' }
         format.json { render :show, status: :created, location: @emprestimo }
       else
         format.html { render :new }
